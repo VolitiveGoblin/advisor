@@ -4,7 +4,7 @@ stuNameList = ['alice', 'bob', 'cindy', 'david', 'frank', 'ellen', 'grace', 'hel
 courseList = [110, 316, 223, 328, 136, 243, 253, 356]
 courseListFull = [110, 213, 315, 316, 412, 121, 223, 326, 328, 422, 136, 238, 335, 336, 432, 140, 243, 345, 346, 448, 150, 253, 355, 356, 452]
 preRecDict = {110:213, 316:412, 223:326, 328:422, 136:238, 243:345, 253:355, 356:452}
-stuObjList = []
+finishedCourses = []
 class Person:
     def __init__(self, name):
         self.name = name
@@ -17,8 +17,8 @@ class advisor(Person):
     def __init__(self, name):
          Person.__init__(self, name)
 
-    def approveSelectedCourse(self):
-
+    def approveSelectedCourse(self, finishedCourses, preRecDict):
+        return self.name
 
     
 class Student(Person):
@@ -47,9 +47,9 @@ class Student(Person):
 
 for name in stuNameList:
     stuObj = Student(name)
-    stuObjList.append(stuObj)
+    finishedCourses.append(stuObj)
 
-for stuObj in stuObjList:
+for stuObj in finishedCourses:
     stuObj.Intro()
     stuObj.selectCourse(courseList, 3)
     print(stuObj.getSelectedCourses())
