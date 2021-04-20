@@ -42,7 +42,12 @@ class Student(Person):
             if (selectedCourses not in self.selectedCourses):
                 self.selectedCourses.append(selectedCourses)
 
-
+    def selectRestCourse(self, courseListFull, numOfCourses):
+        while(len(self.selectedCourses) != numOfCourses):
+            index = random.randint(0, len(courseListFull) - 1)
+            selectedCourses = courseListFull[index]
+            if (selectedCourses not in self.selectedCourses):
+                self.selectedCourses.append(selectedCourses)
    
 
 for name in stuNameList:
@@ -52,4 +57,6 @@ for name in stuNameList:
 for stuObj in finishedCourses:
     stuObj.Intro()
     stuObj.selectCourse(courseList, 3)
+    stuObj.selectRestCourse(courseListFull, 6)
     print(stuObj.getSelectedCourses())
+
